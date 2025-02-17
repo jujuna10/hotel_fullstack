@@ -6,7 +6,7 @@ import HeroText from './HeroText'
 function HeroSection() {
   return (
     <div className='w-full h-screen'>
-         <Image src='/mainphoto.jpg' width={10000000} height={11000000000} className='w-full h-[80%]' />
+         <Image src='/room.webp' width={10000000} height={11000000000} alt='room photo' className='w-full h-[100%]' />
          <Navbar />
          <HeroText />
     </div>
