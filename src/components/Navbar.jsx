@@ -1,3 +1,5 @@
+'use client'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 function Navbar() {
@@ -9,6 +11,14 @@ function Navbar() {
         'Blog',
         'Contact'
     ]
+
+    const router = useRouter()
+    const handleClick = () => {
+        router.push('/registration')
+    }
+    const login = () => {
+        router.push('/login')
+    }
 
     return (
         <div className='absolute top-11 w-full'>
@@ -22,8 +32,8 @@ function Navbar() {
                 </div>
 
                 <div className='flex gap-12 group'>
-                    <button className='bg-[rgb(216,178,141)] px-3 py-3 rounded-[5px] duration-200 group-hover:bg-transparent'>Register</button>
-                    <button className='hover:bg-[rgb(216,178,141)] duration-200 px-3 py-3 rounded-[5px]'>Login</button>
+                    <button className='bg-[rgb(216,178,141)] px-3 py-3 rounded-[5px] duration-200 group-hover:bg-transparent' onClick={handleClick}>Register</button>
+                    <button className='hover:bg-[rgb(216,178,141)] duration-200 px-3 py-3 rounded-[5px]' onClick={login}>Login</button>
                 </div>
 
             </div>

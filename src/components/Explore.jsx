@@ -53,18 +53,20 @@ function Explore() {
     ]
 
   return (
-    <div className='flex flex-col justify-center items-center bg-[rgb(249,242,236)] py-20'>
-        <div className='flex justify-center flex-col items-center'>
-            <p className='text-red-500 font-bold'>Explore</p>
-            <p className={`text-[35px] font-bold ${playfair.className}`}>The Hotel</p>
+    <div className='flex flex-col justify-center gap-24 items-center bg-[rgb(249,242,236)] py-20'>
+        <div className='flex justify-center flex-col items-center gap-5'>
+            <div className='flex justify-center flex-col items-center '>
+                <p className='text-red-500 font-bold'>Explore</p>
+                <p className={`text-[35px] font-bold ${playfair.className}`}>The Hotel</p>
+            </div>
             <p className='text-red-400 max-w-[75%]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, nisi harum nemo repellat hic distinctio assumenda.</p>
         </div>
-        <div className='grid grid-cols-3 gap-5 w-[55%]'>
+        <div className='grid grid-cols-3 gap-12 w-[72%]'>
             {images.map((item,index) => (
                 <div className='bg-white w-[100%] p-5 flex flex-col gap-5'>
                     <div className='flex gap-16'>
-                        <Image src={item} width={120} height={120} />
-                        <Image src={images2[index]} width={100} height={100} />
+                        <Image src={item} width={120} height={120} alt='iamge' />
+                        <Image src={images2[index]} width={100} height={100} alt='image' />
                     </div>
                     <p className='text-[20px] font-bold'>{titles[index]}</p>
                     <p className='text-gray-500'>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
