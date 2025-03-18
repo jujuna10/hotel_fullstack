@@ -7,9 +7,6 @@ const usersRoute = express.Router()
 usersRoute.use(cors())
 
 
-
-
-
 usersRoute.post('/registration', (req, res) => {
     const {name,email,password} = req.body
     if (!name || !email || !password) {
@@ -43,10 +40,8 @@ usersRoute.post('/login', (req,res) => {
                 return res.status(401).json({message: 'nof found'})
             }
             const user = response.rows[0]
-            if(user.email !== email){
-                return res.json({message: 'noemail'})
-            }else if(user.password !== password){
-                return res.json({message: 'nopass'})
+            if(user.email !== email || user.password !== password){
+                return res.status(401).json({message: 'no no'})
             }
             res.status(200).json({name: user.name, email:user.email})
         })

@@ -19,7 +19,7 @@ function registration() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try{
-            const response = await fetch('http://localhost:3001/users/registration',{
+            const response = await fetch('http://localhost:3002/users/registration',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

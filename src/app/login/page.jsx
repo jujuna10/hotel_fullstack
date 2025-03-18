@@ -19,26 +19,23 @@ function registration() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try{
-            const response = await fetch('http://localhost:3001/users/login',{
+            const response = await fetch('http://localhost:3002/users/login',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(user)
             })
-            if(!response.ok){
-                console.log(response.message,'response')
-            }
+
             const data = await response.json();
-            if (data.message === 'noemail' || data.message === 'nopass') {
-                setMessage(data.message)
+            if (!response.ok) {
+                console.log(data.message, 'response')
+                setMessage(data.message) 
+                return
             }
-            console.log(data.message,'message')
-            setUserInfo(data);
-            setUser({
-                email: '',
-                password: ''
-            })
+    
+            router.push('/profile')
+
         }catch(error){
             console.error('Error:', error)
         }
