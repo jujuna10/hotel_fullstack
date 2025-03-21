@@ -28,7 +28,7 @@ function page() {
   useEffect(() => {
     const loginUser = async () => {
       try {
-        const response = await fetch('http://localhost:3002/rooms', {
+        const response = await fetch('http://localhost:80/rooms', {
           method: 'GET',
         });
   

@@ -44,7 +44,7 @@ function RoomDetailPage() {
   useEffect(() => {
     const fetchRoomDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:3002/rooms/details/${id}`);
+        const response = await fetch(`http://localhost:80/rooms/details/${id}`);
         const data = await response.json();
 
         if (!response.ok) {
@@ -69,7 +69,7 @@ function RoomDetailPage() {
   useEffect(() => {
     const fetchAllRooms = async () => {
       try {
-        const response = await fetch('http://localhost:3002/rooms/allroom');
+        const response = await fetch('http://localhost:80/rooms/allroom');
         const data = await response.json();
 
         if (!response.ok) {
